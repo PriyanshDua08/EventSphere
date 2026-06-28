@@ -116,3 +116,709 @@ export function useApp() {
   if (!ctx) throw new Error('useApp must be used within AppProvider');
   return ctx;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // Import React hooks and context utilities
+// import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+// // Import your API client (axios or similar)
+// import api from '../api/client';
+
+// Create a new Context object for tasks
+// This will allow any component to access task-related state and functions
+// const TaskContext = createContext(null);
+
+// export function TaskProvider({ children }) {
+//   // -------------------- STATE --------------------
+//   // Holds the currently logged-in user (null if not logged in)
+//   const [user, setUser] = useState(null); // {id, name, email}
+//   // Holds the list of tasks fetched from the backend
+//   const [tasks, setTasks] = useState([]);
+//   // Loading flag to show spinners until bootstrap finishes
+//   const [loading, setLoading] = useState(true);
+
+  // -------------------- API CALLS --------------------
+  // Fetch all tasks from the server
+  // useCallback ensures the function reference is stable across renders
+  // const fetchTasks = useCallback(async () => {
+  //   const { data } = await api.get('/tasks');
+  //   setTasks(data); // update state with fetched tasks
+  //   return data;    // return data for optional chaining
+  // }, []);
+
+  // -------------------- BOOTSTRAP --------------------
+  // On first render, restore session from localStorage token
+  // and load tasks from the backend
+  // useEffect(() => {
+  //   (async () => {
+  //     // Check if a token exists in localStorage
+  //     const token = localStorage.getItem('token');
+  //     if (token) {
+  //       try {
+          // Validate token and fetch user info
+      
+          // If token is invalid, remove it
+      //     localStorage.removeItem('token');
+      //   }
+      // }
+      // Fetch tasks regardless of login state
+      // await fetchTasks();
+      // Mark loading as complete
+  //     setLoading(false);
+  //   })();
+  // }, [fetchTasks]);
+
+  // -------------------- AUTH FUNCTIONS --------------------
+  // Signup new user
+  // async function signup({ name, email, password }) {
+  //   const { data } = await api.post('/auth/signup', { name, email, password });
+  //   localStorage.setItem('token', data.token); // save token
+  //   setUser(data.user); // set user state
+  //   return data.user;
+  // }
+
+  // Login existing user
+
+
+  // -------------------- TASK CRUD --------------------
+  // Create a new task
+  // async function createTask(payload) {
+  //   await api.post('/tasks', payload);
+  //   await fetchTasks(); // refresh tasks after creation
+  // }
+
+  // Update an existing task
+ // Import React hooks and context utilities
+/
+
+  // -------------------- BOOTSTRAP --------------------
+  // On first render, restore session from localStorage token
+  // and load tasks from the backend
+ // 
+
+  // -------------------- AUTH FUNCTIONS --------------------
+  // Signup new user
+  // save token
+  //   setUser(data.user); // set user state
+  //   return data.user;
+  // }
+
+  // // Logout user
+  // function logout() {
+  //   localStorage.removeItem('token'); // clear token
+  //   setUser(null); // reset user state
+  // }
+
+  // -------------------- TASK CRUD --------------------
+  // Create a new task
+// 
+
+  // Update an existing task
+  // async function updateTask(taskId, payload) {
+  //   await api.put(`/tasks/${taskId}`, payload);
+  //   await fetchTasks(); // refresh tasks after update
+  // }
+
+  // Delete a task
+  // async function deleteTask(taskId) {
+  //   await api.delete(`/tasks/${taskId}`);
+  //   await fetchTasks(); // refresh tasks after deletion
+  // }
+
+  // Toggle completion status of a task
+  // async function toggleComplete(taskId) {
+  //   await api.patch(`/tasks/${taskId}/toggle`);
+  //   await fetchTasks(); // refresh tasks after toggle
+  // }
+
+  // -------------------- CONTEXT VALUE --------------------
+  // Expose state and functions to all children components
+
+
+// -------------------- CUSTOM HOOK --------------------
+// Convenience hook to access TaskContext
+// export function useTasks() {
+//   const ctx = useContext(TaskContext);
+//   if (!ctx) throw new Error('useTasks must be used within TaskProvider');
+//   return ctx;
+// }
+
+
+  // Delete a task
+  // async function deleteTask(taskId) {
+  //   await api.delete(`/tasks/${taskId}`);
+  //   await fetchTasks(); // refresh tasks after deletion
+  // }
+
+  // Toggle completion status of a task
+  // async function toggleComplete(taskId) {
+  //   await api.patch(`/tasks/${taskId}/toggle`);
+  //   await fetchTasks(); // refresh tasks after toggle
+  // }
+
+  // -------------------- CONTEXT VALUE --------------------
+  // Expose state and functions to all children components
+//   return (
+//     <TaskContext.Provider value={{
+//       user, signup, login, logout, loading, // auth-related
+//       tasks, createTask, updateTask, deleteTask, toggleComplete, // task-related
+//       refreshTasks: fetchTasks, // manual refresh
+//     }}>
+//       {children}
+//     </TaskContext.Provider>
+//   );
+// }
+
+// -------------------- CUSTOM HOOK --------------------
+// Convenience hook to access TaskContext
+// export function useTasks() {
+//   const ctx = useContext(TaskContext);
+//   if (!ctx) throw new Error('useTasks must be used within TaskProvider');
+//   return ctx;
+// }
+// 
+  // // Holds the list of tasks fetched from the backend
+  // const [tasks, setTasks] = useState([]);
+  // // Loading flag to show spinners until bootstrap finishes
+  // const [loading, setLoading] = useState(true);
+
+  // // -------------------- API CALLS --------------------
+  // // Fetch all tasks from the server
+  // // useCallback ensures the function reference is stable across renders
+  // const fetchTasks = useCallback(async () => {
+  //   const { data } = await api.get('/tasks');
+    // setTasks(data); // update state with fetched tasks
+  //   return data;    // return data for optional chaining
+  // }, []);
+
+  // // -------------------- BOOTSTRAP --------------------
+  // // On first render, restore session from localStorage token
+  // // and load tasks from the backend
+  // useEffect(() => {
+  //   (async () => {
+  //     // Check if a token exists in localStorage
+  //     const token = localStorage.getItem('token');
+  //     if (token) {
+  //       try {
+          // Validate token and fetch user info
+  //         const { data } = await api.get('/auth/me');
+  //         setUser(data); // set logged-in user
+  //       } catch {
+  //         // If token is invalid, remove it
+  //         localStorage.removeItem('token');
+  //       }
+  //     }
+  //     // Fetch tasks regardless of login state
+  //     await fetchTasks();
+  //     // Mark loading as complete
+  //     setLoading(false);
+  //   })();
+  // }, [fetchTasks]);
+
+  // -------------------- AUTH FUNCTIONS --------------------
+  // Signup new user
+  // async function signup({ name, email, password }) {
+  //   const { data } = await api.post('/auth/signup', { name, email, password });
+  //   localStorage.setItem('token', data.token); // save token
+  //   setUser(data.user); // set user state
+  //   return data.user;
+  // }
+
+  // Login existing user
+  // async function login(email, password) {
+  //   const { data } = await api.post('/auth/login', { email, password });
+  //   localStorage.setItem('token', data.token); // save token
+  //   setUser(data.user); // set user state
+  //   return data.user;
+  // }
+
+  // Logout user
+  // function logout() {
+  //   localStorage.removeItem('token'); // clear token
+  //   setUser(null); // reset user state
+  // }
+
+  // -------------------- TASK CRUD --------------------
+  // Create a new task
+  // async function createTask(payload) {
+  //   await api.post('/tasks', payload);
+  //   await fetchTasks(); // refresh tasks after creation
+  // }
+
+  // Update an existing task
+  // async function updateTask(taskId, payload) {
+  //   await api.put(`/tasks/${taskId}`, payload);
+  //   await fetchTasks(); // refresh tasks after update
+  // }
+
+  // Delete a task
+  // async function deleteTask(taskId) {
+  //   await api.delete(`/tasks/${taskId}`);
+  //   await fetchTasks(); // refresh tasks after deletion
+  // }
+
+  // Toggle completion status of a task
+  // async function toggleComplete(taskId) {
+  //   await api.patch(`/tasks/${taskId}/toggle`);
+  //   await fetchTasks(); // refresh tasks after toggle
+  // }
+
+  // -------------------- CONTEXT VALUE --------------------
+  // Expose state and functions to all children components
+//   return (
+//     <TaskContext.Provider value={{
+//       user, signup, login, logout, loading, // auth-related
+//       tasks, createTask, updateTask, deleteTask, toggleComplete, // task-related
+//       refreshTasks: fetchTasks, // manual refresh
+//     }}>
+//       {children}
+//     </TaskContext.Provider>
+//   );
+// }
+
+// -------------------- CUSTOM HOOK --------------------
+// Convenience hook to access TaskContext
+// export function useTasks() {
+//   const ctx = useContext(TaskContext);
+//   if (!ctx) throw new Error('useTasks must be used within TaskProvider');
+//   return ctx;
+// }
+
+
