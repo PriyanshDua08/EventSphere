@@ -8,3 +8,4 @@ export default function ProtectedRoute({ role, children }) {
   if (role && user.role !== role) return <Navigate to="/" replace />;
   return children;
 }
+if user()redt
