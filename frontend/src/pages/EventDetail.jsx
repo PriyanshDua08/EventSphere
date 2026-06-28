@@ -8,7 +8,7 @@ export default function EventDetail() {
   const { subEvents, user, isRegistered, register } = useApp();
   const ev = subEvents.find(e => e.subEventId === id);
 
-  if (!ev) return <div className="max-w-2xl mx-auto px-5 py-16 text-center text-white/40">Sub-event not found.</div>;
+  if (!ev) return <div className="max-w-2xl mx-auto px-5 py-16 text-center text-white/40">Sub-event was not found.</div>;
 
   const seatsLeft = ev.capacity - ev.registered;
   const isFull = seatsLeft <= 0;
