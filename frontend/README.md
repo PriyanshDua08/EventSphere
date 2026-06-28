@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Open the URL it prints (usually `http://localhost:5173`).
+Open the URL it displays (usually `http://localhost:5173`).
 
 ## What's wired up
 
